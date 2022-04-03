@@ -23,21 +23,21 @@ const gotyVoto = async( req, res = response ) => {
     if( !gotyId ){
       return res.status(404).json({
         ok:false,
-        message: 'No existe un juego con ese ID'
+        message: 'No match a game with this ID'
       });
     }
     else {
       gotyUpdate = await Goty.findByIdAndUpdate( id, {votos: gotyId.votos + 1}, { new: true });
       return res.json({
         ok:true,
-        message:'Gracias por tu voto a ' + gotyId.name,
+        message:'Thanks for your vote to ' + gotyId.name,
         gotyUpdate
       }); 
     }
   } catch (error) {
     return res.status(404).json({
       ok:false,
-      error
+      message: 'No match a game with this ID'
     })
   }
 }
