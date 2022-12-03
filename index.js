@@ -3,7 +3,7 @@ const express = require('express');
 const cors    = require('cors');
 const { dbConnect } = require('./config/db');
 const app = express();
-
+/** DEPLOY TO RAILY APP */
 // CONFIGURAR CORS
 app.use( cors());
 
